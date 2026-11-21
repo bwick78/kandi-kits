@@ -1,0 +1,765 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kandi Kits | DIY P.L.U.R. Bracelet Kits &amp; Festival Kandi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts for Y2K Street / Rave Typography & Clean UI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Fredoka', 'sans-serif'],
+            graffiti: ['Permanent Marker', 'cursive'],
+          },
+          colors: {
+            cosmic: '#090514',
+            cosmicCard: '#130b29',
+            neonPurple: '#b829ff',
+            hotPink: '#ff2a85',
+            pastelCyan: '#5ce1e6',
+            pastelYellow: '#ffe66d',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Custom Cosmic Galaxy & Rave Glow Effects */
+    body {
+      background-color: #090514;
+      color: #f8fafc;
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(184, 41, 255, 0.22) 0%, transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(255, 42, 133, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(92, 225, 230, 0.14) 0%, transparent 50%);
+      overflow-x: hidden;
+    }
+
+    /* Subtle Starfield Texture */
+    .starfield {
+      background-image:
+        radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 90px 140px, #5ce1e6, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 80px, #ffe66d, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 230px 190px, #ff2a85, rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 260px 260px;
+    }
+
+    /* Neon Text & Box Glows */
+    .neon-logo-text {
+      text-shadow:
+        0 0 8px rgba(184, 41, 255, 0.8),
+        0 0 20px rgba(255, 42, 133, 0.6);
+    }
+
+    .glow-purple {
+      box-shadow: 0 0 25px rgba(184, 41, 255, 0.35);
+    }
+
+    .glow-pink {
+      box-shadow: 0 0 25px rgba(255, 42, 133, 0.35);
+    }
+
+    /* Simulated Circular Mylar Pouch Styling */
+    .mylar-pouch {
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.22) 0%, transparent 35%),
+        radial-gradient(circle at 75% 75%, rgba(184, 41, 255, 0.45) 0%, transparent 50%),
+        radial-gradient(circle at 25% 75%, rgba(255, 42, 133, 0.4) 0%, transparent 50%),
+        linear-gradient(145deg, #1b1035 0%, #090514 100%);
+      box-shadow:
+        inset 0 0 18px rgba(255, 255, 255, 0.18),
+        inset 0 -8px 20px rgba(0, 0, 0, 0.85),
+        0 14px 35px rgba(0, 0, 0, 0.75);
+      border: 3px solid rgba(255, 255, 255, 0.14);
+    }
+
+    /* 3D Pony Bead Pill Look */
+    .pony-bead {
+      box-shadow:
+        inset 0 3px 5px rgba(255, 255, 255, 0.6),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.45),
+        0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Floating Animation for Pouches */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(-1deg); }
+      50% { transform: translateY(-8px) rotate(1deg); }
+    }
+    .animate-float {
+      animation: floatSlow 4.5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="starfield antialiased selection:bg-hotPink selection:text-white">
+
+  <!-- Top Pre-Launch Announcement Banner -->
+  <div class="bg-gradient-to-r from-neonPurple via-hotPink to-pastelCyan text-cosmic text-xs sm:text-sm font-extrabold py-2 px-4 text-center tracking-wide">
+    ✨ OFFICIAL LAUNCH PREVIEW — KANDI-KITS.COM • FESTIVAL &amp; RETAIL READY ✨
+  </div>
+
+  <!-- Sticky Navigation Header -->
+  <header class="sticky top-0 z-40 bg-cosmic/85 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-neonPurple to-hotPink flex items-center justify-center shadow-lg group-hover:scale-105 transition">
+          <span class="text-white font-display font-bold text-lg">K</span>
+        </div>
+        <span class="font-graffiti text-2xl sm:text-3xl tracking-wider bg-gradient-to-r from-pastelCyan via-purple-300 to-hotPink bg-clip-text text-transparent neon-logo-text">
+          KANDI KITS
+        </span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-300">
+        <a href="#shop-kits" class="hover:text-pastelCyan transition">Shop Kits</a>
+        <a href="#shop-kits" class="hover:text-hotPink transition">Premade Drops</a>
+        <a href="#plur-story" class="hover:text-pastelYellow transition">P.L.U.R. Story</a>
+        <a href="#waitlist" class="hover:text-neonPurple transition">Notify Me</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="#waitlist" class="hidden sm:inline-flex items-center px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 hover:bg-white/20 text-pastelCyan border border-pastelCyan/40 transition">
+          VIP List
+        </a>
+
+        <!-- Interactive Preview Cart Button -->
+        <button
+          id="open-cart-btn"
+          onclick="toggleCart(true)"
+          aria-label="Open Preview Cart"
+          class="relative inline-flex items-center gap-2 px-3.5 sm:px-4 py-2.5 rounded-full bg-gradient-to-r from-neonPurple to-hotPink text-white font-bold text-xs sm:text-sm shadow-lg hover:opacity-95 active:scale-95 transition"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span>Bag</span>
+          <span id="cart-badge" class="ml-0.5 px-2 py-0.5 text-xs font-extrabold rounded-full bg-cosmic text-pastelYellow">
+            0
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Quick-Nav Bar -->
+    <div class="flex md:hidden justify-around border-t border-white/10 py-2 text-xs font-semibold text-slate-300 bg-cosmic/95">
+      <a href="#shop-kits" class="hover:text-pastelCyan px-2 py-1">Shop Kits</a>
+      <a href="#shop-kits" class="hover:text-hotPink px-2 py-1">Premade</a>
+      <a href="#plur-story" class="hover:text-pastelYellow px-2 py-1">P.L.U.R.</a>
+      <a href="#waitlist" class="hover:text-neonPurple px-2 py-1">Notify Me</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-24 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <!-- Status Pill Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cosmicCard border border-neonPurple/50 text-pastelCyan text-xs sm:text-sm font-bold mb-6 shadow-md">
+        <span class="w-2 h-2 rounded-full bg-hotPink animate-ping"></span>
+        <span>Coming Soon to Festivals &amp; Retail</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-tight mb-6">
+        <span class="block text-white">TRADE THE VIBE.</span>
+        <span class="bg-gradient-to-r from-pastelCyan via-neonPurple to-hotPink bg-clip-text text-transparent">
+          WEAR THE P.L.U.R.
+        </span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="max-w-2xl mx-auto text-slate-300 text-base sm:text-xl leading-relaxed mb-9">
+        All-in-one <strong class="text-white">DIY P.L.U.R. Bracelet Kits</strong> and <strong class="text-pastelYellow">Ready-to-Wear Rave Singles</strong> packed in festival-safe circular pouches. Made for ravers, festival-goers, and late-night bead sessions.
+      </p>
+
+      <!-- Hero CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#shop-kits" class="w-full sm:w-auto px-8 py-4 rounded-full font-display font-bold text-base sm:text-lg bg-gradient-to-r from-neonPurple via-hotPink to-pink-500 text-white shadow-xl glow-pink hover:scale-105 transition">
+          Explore First Drop
+        </a>
+        <a href="#waitlist" class="w-full sm:w-auto px-8 py-4 rounded-full font-display font-bold text-base sm:text-lg bg-cosmicCard hover:bg-white/10 text-pastelCyan border-2 border-pastelCyan/50 transition">
+          Join VIP Drop List
+        </a>
+      </div>
+
+      <!-- Trust / Feature Strip -->
+      <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto text-xs sm:text-sm font-semibold text-slate-300">
+        <div class="bg-white/5 border border-white/10 rounded-2xl py-3 px-3">🎪 Festival-Safe Round Pouch</div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl py-3 px-3">🌈 Vibrant Pony &amp; Letter Beads</div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl py-3 px-3">⚡ Stretch Cord Included</div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl py-3 px-3">🌴 Assembled in California</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase Section -->
+  <section id="shop-kits" class="py-14 sm:py-20 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-hotPink font-bold uppercase tracking-widest text-xs sm:text-sm">Drop 01 Collection</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2">Choose Your Kandi Experience</h2>
+        <p class="text-slate-400 mt-3 max-w-xl mx-auto text-sm sm:text-base">
+          Craft your own custom cuffs with friends or grab pre-strung festival singles ready for the rail.
+        </p>
+      </div>
+
+      <!-- Two-Column Product Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
+
+        <!-- Product Card A: DIY P.L.U.R. Bracelet Kit -->
+        <div class="bg-cosmicCard/90 border border-neonPurple/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between glow-purple hover:border-neonPurple transition">
+          <div>
+            <!-- Top Card Header -->
+            <div class="flex items-center justify-between gap-2 mb-6">
+              <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-neonPurple/20 text-purple-300 border border-neonPurple/40">
+                Best Seller • DIY Kit
+              </span>
+              <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-white/10 text-pastelYellow">
+                AGES 10+
+              </span>
+            </div>
+
+            <!-- Simulated Circular Mylar Pouch Preview (Front Design) -->
+            <div class="flex justify-center my-6">
+              <div class="mylar-pouch animate-float relative w-64 h-64 sm:w-72 sm:h-72 rounded-full flex flex-col items-center justify-between p-5 text-center select-none">
+                <!-- Hang Hole Slot -->
+                <div class="w-10 h-3 rounded-full bg-cosmic border border-white/20 shadow-inner"></div>
+
+                <!-- Age Badge -->
+                <div class="px-2.5 py-0.5 rounded-full bg-neonPurple text-white text-[10px] font-extrabold tracking-wider shadow">
+                  AGE 10+
+                </div>
+
+                <!-- Top Bead Arch -->
+                <div class="flex items-center gap-1.5">
+                  <span class="pony-bead w-4 h-3.5 rounded-md bg-pink-400"></span>
+                  <span class="pony-bead w-4 h-3.5 rounded-md bg-pastelCyan"></span>
+                  <span class="pony-bead w-4 h-3.5 rounded-md bg-purple-400"></span>
+                  <span class="pony-bead w-4 h-3.5 rounded-md bg-pastelYellow"></span>
+                  <span class="pony-bead w-4 h-3.5 rounded-md bg-hotPink"></span>
+                </div>
+
+                <!-- Graffiti Pouch Title -->
+                <div class="my-1">
+                  <div class="font-graffiti text-3xl sm:text-4xl leading-none bg-gradient-to-b from-pink-200 via-purple-300 to-neonPurple bg-clip-text text-transparent drop-shadow">
+                    KANDI<br/>KITS
+                  </div>
+                </div>
+
+                <!-- Bottom Bead Arch with Heart -->
+                <div class="flex items-center gap-1.5">
+                  <span class="pony-bead w-4 h-3.5 rounded-md bg-pastelCyan"></span>
+                  <span class="pony-bead w-4 h-3.5 rounded-md bg-pastelYellow"></span>
+                  <span class="pony-bead w-5 h-4 rounded-md bg-white text-hotPink text-[10px] font-black flex items-center justify-center">♥</span>
+                  <span class="pony-bead w-4 h-3.5 rounded-md bg-purple-400"></span>
+                  <span class="pony-bead w-4 h-3.5 rounded-md bg-hotPink"></span>
+                </div>
+
+                <!-- Pouch Subheadline -->
+                <div class="text-[10px] sm:text-[11px] font-display font-bold tracking-wider text-white uppercase">
+                  DIY P.L.U.R. BRACELET KIT
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Title & Price -->
+            <div class="flex items-baseline justify-between gap-4 mt-4">
+              <h3 class="font-display text-2xl sm:text-3xl font-bold text-white">
+                DIY P.L.U.R. Bracelet Kit
+              </h3>
+              <span class="font-display text-2xl sm:text-3xl font-bold text-pastelCyan">
+                $12.99
+              </span>
+            </div>
+
+            <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
+              Everything you need to create 6–8 custom rave bracelets at pre-games, camp, or home. Packed in our signature crowd-safe circular resealable pouch.
+            </p>
+
+            <!-- What's Inside Bullet List -->
+            <ul class="mt-5 space-y-2 text-xs sm:text-sm text-slate-300 border-t border-white/10 pt-4">
+              <li class="flex items-center gap-2">
+                <span class="text-pastelCyan font-bold">✦</span> 100+ Assorted Neon, Pastel &amp; Glow Pony Beads
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-hotPink font-bold">✦</span> Full Alphabet Letter Bead Mix (Spell P.L.U.R. &amp; Custom Words)
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-pastelYellow font-bold">✦</span> Heavy-Duty Stretch Elastic Cord + Step-by-Step Guide
+              </li>
+            </ul>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="mt-7 flex flex-col sm:flex-row gap-3">
+            <button
+              onclick="addToCart('diy-plur-kit', 'DIY P.L.U.R. Bracelet Kit', 12.99)"
+              class="flex-1 py-3.5 px-6 rounded-2xl font-display font-bold text-base bg-gradient-to-r from-neonPurple to-hotPink text-white shadow-lg hover:opacity-95 active:scale-95 transition cursor-pointer"
+            >
+              Add to Preview Bag — $12.99
+            </button>
+            <a
+              href="#waitlist"
+              class="py-3.5 px-5 rounded-2xl font-bold text-sm text-center bg-white/5 hover:bg-white/10 text-slate-200 border border-white/15 transition"
+            >
+              Drop Alert
+            </a>
+          </div>
+        </div>
+
+        <!-- Product Card B: Premade P.L.U.R. Singles & Cuffs -->
+        <div class="bg-cosmicCard/90 border border-hotPink/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between glow-pink hover:border-hotPink transition">
+          <div>
+            <!-- Top Card Header -->
+            <div class="flex items-center justify-between gap-2 mb-6">
+              <span class="px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-hotPink/20 text-pink-300 border border-hotPink/40">
+                Ready-to-Wear • Festival Stack
+              </span>
+              <span class="px-3 py-1 rounded-full text-xs font-extrabold bg-white/10 text-pastelCyan">
+                HAND-STRUNG
+              </span>
+            </div>
+
+            <!-- Simulated Circular Mylar Pouch Preview (Premade Bracelet Ring) -->
+            <div class="flex justify-center my-6">
+              <div class="mylar-pouch animate-float relative w-64 h-64 sm:w-72 sm:h-72 rounded-full flex flex-col items-center justify-between p-5 text-center select-none" style="animation-delay: 1.2s;">
+                <!-- Hang Hole Slot -->
+                <div class="w-10 h-3 rounded-full bg-cosmic border border-white/20 shadow-inner"></div>
+
+                <div class="px-2.5 py-0.5 rounded-full bg-hotPink text-white text-[10px] font-extrabold tracking-wider shadow">
+                  READY TO TRADE
+                </div>
+
+                <!-- Circular Bracelet Ring Visual -->
+                <div class="relative w-40 h-40 rounded-full border-4 border-dashed border-pastelCyan/40 flex flex-col items-center justify-center p-2">
+                  <!-- Top Ring Beads -->
+                  <div class="flex gap-1 mb-2">
+                    <span class="pony-bead w-3.5 h-3.5 rounded-full bg-pastelYellow"></span>
+                    <span class="pony-bead w-3.5 h-3.5 rounded-full bg-hotPink"></span>
+                    <span class="pony-bead w-3.5 h-3.5 rounded-full bg-pastelCyan"></span>
+                    <span class="pony-bead w-3.5 h-3.5 rounded-full bg-neonPurple"></span>
+                  </div>
+
+                  <!-- Letter Beads Spelling P.L.U.R. -->
+                  <div class="flex items-center gap-1 my-1">
+                    <span class="pony-bead w-6 h-6 rounded-md bg-white text-cosmic font-display font-black text-xs flex items-center justify-center">P</span>
+                    <span class="pony-bead w-6 h-6 rounded-md bg-white text-cosmic font-display font-black text-xs flex items-center justify-center">L</span>
+                    <span class="pony-bead w-6 h-6 rounded-md bg-white text-cosmic font-display font-black text-xs flex items-center justify-center">U</span>
+                    <span class="pony-bead w-6 h-6 rounded-md bg-white text-cosmic font-display font-black text-xs flex items-center justify-center">R</span>
+                  </div>
+
+                  <!-- Bottom Ring Beads -->
+                  <div class="flex gap-1 mt-2">
+                    <span class="pony-bead w-3.5 h-3.5 rounded-full bg-neonPurple"></span>
+                    <span class="pony-bead w-3.5 h-3.5 rounded-full bg-pastelCyan"></span>
+                    <span class="pony-bead w-3.5 h-3.5 rounded-full bg-hotPink"></span>
+                    <span class="pony-bead w-3.5 h-3.5 rounded-full bg-pastelYellow"></span>
+                  </div>
+                </div>
+
+                <!-- Pouch Subheadline -->
+                <div class="text-[10px] sm:text-[11px] font-display font-bold tracking-wider text-pastelYellow uppercase">
+                  PREMADE P.L.U.R. SINGLES STACK
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Title & Price -->
+            <div class="flex items-baseline justify-between gap-4 mt-4">
+              <h3 class="font-display text-2xl sm:text-3xl font-bold text-white">
+                Premade P.L.U.R. Singles
+              </h3>
+              <span class="font-display text-2xl sm:text-3xl font-bold text-hotPink">
+                $8.99
+              </span>
+            </div>
+
+            <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
+              Short on prep time before the set? Slip on a curated 3-pack of hand-strung rave singles featuring iconic festival phrases and UV-reactive neon colors.
+            </p>
+
+            <!-- What's Inside Bullet List -->
+            <ul class="mt-5 space-y-2 text-xs sm:text-sm text-slate-300 border-t border-white/10 pt-4">
+              <li class="flex items-center gap-2">
+                <span class="text-hotPink font-bold">✦</span> 3 Hand-Strung Stretch Singles Ready for Trading
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-pastelCyan font-bold">✦</span> Includes Signature "P.L.U.R." + 2 Mystery Rave Phrases
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-pastelYellow font-bold">✦</span> Double-Knotted &amp; Sealed for All-Night Dancing
+              </li>
+            </ul>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="mt-7 flex flex-col sm:flex-row gap-3">
+            <button
+              onclick="addToCart('premade-plur-singles', 'Premade P.L.U.R. Singles Stack', 8.99)"
+              class="flex-1 py-3.5 px-6 rounded-2xl font-display font-bold text-base bg-gradient-to-r from-hotPink to-neonPurple text-white shadow-lg hover:opacity-95 active:scale-95 transition cursor-pointer"
+            >
+              Add to Preview Bag — $8.99
+            </button>
+            <a
+              href="#waitlist"
+              class="py-3.5 px-5 rounded-2xl font-bold text-sm text-center bg-white/5 hover:bg-white/10 text-slate-200 border border-white/15 transition"
+            >
+              Drop Alert
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How P.L.U.R. Works Interactive 4-Pillar Section -->
+  <section id="plur-story" class="py-16 sm:py-24 px-4 sm:px-6 bg-white/[0.02] border-y border-white/10">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span class="text-pastelCyan font-bold uppercase tracking-widest text-xs sm:text-sm">The Culture &amp; Handshake</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-2">How P.L.U.R. Works</h2>
+        <p class="text-slate-400 mt-3 max-w-xl mx-auto text-sm sm:text-base">
+          Tap each letter bead below to explore the four pillars of festival Kandi trading.
+        </p>
+      </div>
+
+      <!-- 4-Pillar Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- P - Peace -->
+        <button
+          onclick="highlightPlur('P')"
+          id="plur-card-P"
+          class="plur-card text-left bg-cosmicCard border-2 border-pastelCyan/40 hover:border-pastelCyan rounded-3xl p-6 transition transform hover:-translate-y-1 cursor-pointer"
+        >
+          <div class="pony-bead w-14 h-14 rounded-2xl bg-pastelCyan text-cosmic font-display font-black text-3xl flex items-center justify-center mb-5">
+            P
+          </div>
+          <h3 class="font-display text-2xl font-bold text-pastelCyan mb-2">PEACE</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Begin the trade with a two-finger peace sign touch. Leave stress outside the gates and bring positive energy to the dancefloor.
+          </p>
+        </button>
+
+        <!-- L - Love -->
+        <button
+          onclick="highlightPlur('L')"
+          id="plur-card-L"
+          class="plur-card text-left bg-cosmicCard border-2 border-hotPink/40 hover:border-hotPink rounded-3xl p-6 transition transform hover:-translate-y-1 cursor-pointer"
+        >
+          <div class="pony-bead w-14 h-14 rounded-2xl bg-hotPink text-white font-display font-black text-3xl flex items-center justify-center mb-5">
+            L
+          </div>
+          <h3 class="font-display text-2xl font-bold text-hotPink mb-2">LOVE</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Form half a heart together with your hands. Celebrate the music, welcome newcomers, and share kindness with strangers.
+          </p>
+        </button>
+
+        <!-- U - Unity -->
+        <button
+          onclick="highlightPlur('U')"
+          id="plur-card-U"
+          class="plur-card text-left bg-cosmicCard border-2 border-neonPurple/40 hover:border-neonPurple rounded-3xl p-6 transition transform hover:-translate-y-1 cursor-pointer"
+        >
+          <div class="pony-bead w-14 h-14 rounded-2xl bg-neonPurple text-white font-display font-black text-3xl flex items-center justify-center mb-5">
+            U
+          </div>
+          <h3 class="font-display text-2xl font-bold text-purple-300 mb-2">UNITY</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Press your palms flat together. No matter where you come from, everyone is connected under the same beat.
+          </p>
+        </button>
+
+        <!-- R - Respect -->
+        <button
+          onclick="highlightPlur('R')"
+          id="plur-card-R"
+          class="plur-card text-left bg-cosmicCard border-2 border-pastelYellow/40 hover:border-pastelYellow rounded-3xl p-6 transition transform hover:-translate-y-1 cursor-pointer"
+        >
+          <div class="pony-bead w-14 h-14 rounded-2xl bg-pastelYellow text-cosmic font-display font-black text-3xl flex items-center justify-center mb-5">
+            R
+          </div>
+          <h3 class="font-display text-2xl font-bold text-pastelYellow mb-2">RESPECT</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Interlock fingers and gently slide your Kandi bracelet onto your new friend's wrist—a memory you wear long after the lights come up.
+          </p>
+        </button>
+      </div>
+
+      <!-- Interactive Trade Tip Banner -->
+      <div id="plur-banner" class="mt-8 bg-gradient-to-r from-neonPurple/20 via-hotPink/20 to-pastelCyan/20 border border-white/15 rounded-2xl p-4 sm:p-5 text-center text-sm sm:text-base text-slate-200">
+        💡 <strong class="text-white">Pro Tip:</strong> Every DIY Kandi Kit includes an illustrated step-by-step P.L.U.R. handshake &amp; knot-tying guide inside the pouch!
+      </div>
+    </div>
+  </section>
+
+  <!-- VIP Launch Waitlist Section -->
+  <section id="waitlist" class="py-16 sm:py-24 px-4 sm:px-6">
+    <div class="max-w-3xl mx-auto bg-gradient-to-br from-cosmicCard via-[#1b0e38] to-cosmicCard border border-neonPurple/50 rounded-3xl p-8 sm:p-12 text-center shadow-2xl glow-purple">
+      <span class="inline-block px-3.5 py-1 rounded-full bg-pastelYellow/20 text-pastelYellow text-xs font-extrabold uppercase tracking-wider mb-4">
+        Early Access • Limited First Batch
+      </span>
+
+      <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mb-4">
+        Get First Dibs on Drop 01
+      </h2>
+
+      <p class="text-slate-300 text-sm sm:text-base max-w-lg mx-auto mb-8">
+        Join the VIP Kandi Kits list for early access to our first online release, festival pop-up locations, and exclusive coupon codes.
+      </p>
+
+      <!-- Waitlist Form -->
+      <form id="waitlist-form" onsubmit="handleWaitlistSubmit(event)" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+        <input
+          type="email"
+          id="waitlist-email"
+          required
+          placeholder="Enter your email address..."
+          class="flex-1 px-5 py-4 rounded-2xl bg-cosmic border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-pastelCyan text-sm sm:text-base"
+        />
+        <button
+          type="submit"
+          class="px-7 py-4 rounded-2xl font-display font-bold text-base bg-gradient-to-r from-pastelCyan to-neonPurple text-cosmic font-extrabold hover:opacity-95 active:scale-95 transition cursor-pointer"
+        >
+          Notify Me
+        </button>
+      </form>
+
+      <!-- Instant Confirmation Message Box (Hidden by default) -->
+      <div id="waitlist-success" class="hidden mt-5 p-4 rounded-2xl bg-pastelCyan/15 border border-pastelCyan/50 text-pastelCyan text-sm font-semibold">
+        🎉 You're on the VIP list! Watch your inbox for our official Drop 01 launch code.
+      </div>
+
+      <!-- Social Links -->
+      <div class="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm font-bold text-slate-300">
+        <span>Follow the journey:</span>
+        <a href="#waitlist" onclick="showToast('Follow @kandikits on TikTok!')" class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-hotPink/20 hover:text-hotPink border border-white/10 transition">
+          TikTok @kandikits
+        </a>
+        <a href="#waitlist" onclick="showToast('Follow @kandikits on Instagram!')" class="px-3.5 py-1.5 rounded-full bg-white/5 hover:bg-neonPurple/20 hover:text-purple-300 border border-white/10 transition">
+          Instagram @kandikits
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-cosmic border-t border-white/10 py-12 px-4 sm:px-6 text-slate-400 text-xs sm:text-sm">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <div class="font-graffiti text-xl text-white tracking-wider mb-1">KANDI KITS</div>
+        <p class="text-slate-400">
+          Official Domain: <span class="text-pastelCyan font-semibold">kandi-kits.com</span> • Assembled in California, USA 🌴
+        </p>
+      </div>
+
+      <div class="text-center md:text-right space-y-1 max-w-md">
+        <p class="text-slate-300 font-semibold">
+          ⚠️ SAFETY NOTICE (CPSIA): Recommended for Ages 10+.
+        </p>
+        <p class="text-[11px] text-slate-500">
+          Contains small parts (beads). Not intended for children under 3 years. &copy; <span id="year"></span> Kandi Kits LLC. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Interactive Preview Cart Drawer -->
+  <div id="cart-drawer-backdrop" onclick="toggleCart(false)" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+
+  <aside
+    id="cart-drawer"
+    class="fixed top-0 right-0 h-full w-full max-w-md bg-cosmicCard border-l border-white/15 z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-6 shadow-2xl"
+  >
+    <div>
+      <!-- Drawer Header -->
+      <div class="flex items-center justify-between border-b border-white/10 pb-4">
+        <div class="flex items-center gap-2">
+          <h3 class="font-display text-2xl font-bold text-white">Your Preview Bag</h3>
+          <span class="px-2 py-0.5 text-[10px] font-bold uppercase rounded bg-pastelYellow/20 text-pastelYellow">Demo</span>
+        </div>
+        <button onclick="toggleCart(false)" class="p-2 rounded-full bg-white/5 hover:bg-white/15 text-slate-300 hover:text-white transition">
+          ✕
+        </button>
+      </div>
+
+      <!-- Cart Items Container -->
+      <div id="cart-items" class="mt-6 space-y-4 max-h-[55vh] overflow-y-auto pr-1">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </div>
+
+    <!-- Drawer Footer / Subtotal -->
+    <div class="border-t border-white/10 pt-5">
+      <div class="flex items-center justify-between text-base font-bold text-white mb-2">
+        <span>Estimated Subtotal</span>
+        <span id="cart-subtotal" class="text-xl font-display text-pastelCyan">$0.00</span>
+      </div>
+      <p class="text-xs text-slate-400 mb-4">
+        Pre-launch storefront preview. Checkout activates on Drop 01 launch day!
+      </p>
+      <button
+        onclick="proceedToWaitlistFromCart()"
+        class="w-full py-4 rounded-2xl font-display font-bold text-base bg-gradient-to-r from-neonPurple via-hotPink to-pink-500 text-white shadow-lg hover:opacity-95 transition cursor-pointer"
+      >
+        Lock In Order via VIP Waitlist →
+      </button>
+    </div>
+  </aside>
+
+  <!-- Non-blocking Toast Notification -->
+  <div
+    id="toast"
+    class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-full bg-cosmicCard border border-pastelCyan text-white text-xs sm:text-sm font-bold shadow-2xl opacity-0 pointer-events-none transition-opacity duration-300"
+  >
+    Added to bag!
+  </div>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Preview Cart State
+    let cart = [];
+
+    function toggleCart(open) {
+      const drawer = document.getElementById('cart-drawer');
+      const backdrop = document.getElementById('cart-drawer-backdrop');
+      if (open) {
+        backdrop.classList.remove('hidden');
+        drawer.classList.remove('translate-x-full');
+      } else {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.add('hidden');
+      }
+    }
+
+    function addToCart(id, name, price) {
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id, name, price, qty: 1 });
+      }
+      renderCart();
+      showToast(`✨ Added "${name}" to your bag!`);
+      toggleCart(true);
+    }
+
+    function updateQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+      renderCart();
+    }
+
+    function renderCart() {
+      const container = document.getElementById('cart-items');
+      const badge = document.getElementById('cart-badge');
+      const subtotalEl = document.getElementById('cart-subtotal');
+
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+      badge.textContent = totalItems;
+      subtotalEl.textContent = `$${totalPrice.toFixed(2)}`;
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-slate-400">
+            <div class="text-4xl mb-3">🔮</div>
+            <p class="font-semibold text-white">Your Kandi bag is empty</p>
+            <p class="text-xs mt-1">Add a DIY Kit or Premade Singles stack to preview your order!</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = cart
+        .map(
+          item => `
+          <div class="flex items-center justify-between gap-3 bg-white/5 border border-white/10 rounded-2xl p-4">
+            <div>
+              <h4 class="font-display font-bold text-white text-sm sm:text-base">${item.name}</h4>
+              <p class="text-xs text-pastelCyan font-semibold">$${item.price.toFixed(2)} each</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="updateQty('${item.id}', -1)" class="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold flex items-center justify-center">-</button>
+              <span class="w-6 text-center text-sm font-bold text-white">${item.qty}</span>
+              <button onclick="updateQty('${item.id}', 1)" class="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold flex items-center justify-center">+</button>
+            </div>
+          </div>
+        `
+        )
+        .join('');
+    }
+
+    function proceedToWaitlistFromCart() {
+      toggleCart(false);
+      document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        document.getElementById('waitlist-email').focus();
+      }, 500);
+    }
+
+    // Interactive P.L.U.R. Pillar Highlight
+    const plurMessages = {
+      P: '✌️ PEACE: Touch two fingers together to start every Kandi trade with pure good vibes.',
+      L: '🫶 LOVE: Make half a heart together—celebrating community and shared music.',
+      U: '🙌 UNITY: Press palms together—everyone on the dancefloor is one family.',
+      R: '🤝 RESPECT: Slide the bracelet over interlocked fingers to seal the friendship!'
+    };
+
+    function highlightPlur(letter) {
+      const banner = document.getElementById('plur-banner');
+      banner.innerHTML = `<strong class="text-pastelCyan">${plurMessages[letter]}</strong>`;
+    }
+
+    // VIP Waitlist Form Submission
+    function handleWaitlistSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('waitlist-email');
+      const successBox = document.getElementById('waitlist-success');
+      if (input.value.trim()) {
+        successBox.classList.remove('hidden');
+        showToast('🎉 Welcome to the Kandi Kits VIP Drop List!');
+        input.value = '';
+      }
+    }
+
+    // Custom Toast Notification (No alert() used)
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.remove('opacity-0');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('opacity-0');
+      }, 2800);
+    }
+
+    // Initialize empty cart view
+    renderCart();
+  </script>
+</body>
+</html>
+```
